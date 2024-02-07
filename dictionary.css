@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+ body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM15I56fsnpPdF03lr9JbLE6SVuxvSf3epsQ&s'); 
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+
+    
+}
+nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    color: white;
+    font-size: 70px;
+    height: 200px;
+}
+#container {
+    width:1380px;
+    height: 1100px;
+    padding: 22px;
+    position: relative;
+    top: 60px;
+    background-color:lightcoral;
+    box-shadow: 1px 3px 3px 3px rgb(215,215,215);
+    border-radius: 6px;
+    margin: auto; 
+}
+#container input{
+    height: 70%;
+    width:80%;
+    padding: 12px; 
+    padding-left: 30px;
+    border:none;
+    outline:none; 
+    font-size: 80px;
+    border-radius:10px ;
+    background-color:lightgray;
+}
+#container i{
+    font-size: 60px;
+    padding-left:200px;
+    margin-left: -300px;
+}
+.searchBar{
+    display: flex;
+    gap:4px;
+}
+
+button{
+    left:35px;
+    top:-8px;
+    position: relative;
+    height:108px;
+    width:19%;
+    border: 5 px solid black;
+    border-radius: 10px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+    background-color:orange;
+}
+
+.text{
+    padding: 22px;
+    margin-top: 22px;
+
+
+}
+h2{
+    font-size: 80px;
+}
+.text p{
+    margin-top: 45px;
+    font-size: 70px;
+}
+
+text span{
+    color: grey;
+}
+
+@media(max-width:600px){
+    nav{
+        height:90px;
+        font-size: 15px;
+    }
+    #container{
+        margin-top: -60px;
+        height: 270px;
+    }
+    #container input{
+        height:40px;
+        width:250px;
+        font-size:10px;
+        margin-top: -80px;
+    }
+    button{
+        height:40px;
+        width:70px;
+        font-size: 8px; 
+        margin-left:37px;
+     
+    }
+    #container i{
+        font-size: 20px;
+        margin-left: -300px;
+
+    }
+    h2{
+        font-size: 12px;
+    }
+    .text p{
+        font-size: 10px;
+        margin-top: 20px;
+    }
+    body{
+        height: 300px;
+    }
+
+    
+   
+    
+}
+
+
+
+
+
+
+
+
+
+
