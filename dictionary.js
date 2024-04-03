@@ -1,44 +1,24 @@
 
-let inputBox = document.getElementById("input-box");
-let button = document.getElementById("button");
-const getData = async (searchValue) => {
+async function submit() {
+    let inputBox = document.getElementById("input-box").value;
+    let text = document.querySelector(".text");
     try {
-        let apiUrl = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchValue}`);
-        let jsonData = await apiUrl.json();
+        const jsonData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${inputBox}`)
+        const data = await jsonData.json();
+        console.log(data);
+        let meanings = data[0].meanings;
+        let firstThreeSynonyms = meanings[0].synonyms.slice(0, 3).join(', ');
 
-        document.querySelector(".text").innerHTML = '';
-        let div = document.createElement("div");
-        div.classList.add("detail");
-        let synonyms = jsonData[0].meanings[0].synonyms.join(", "); 
-        div.innerHTML = `<h2>Word: <span>${jsonData[0].word}</span></h2>
-            <p>Part of Speech: ${jsonData[0].meanings[0].partOfSpeech}</p>
-            <p>Meaning: <span>${jsonData[0].meanings[0].definitions[0].definition}</span></p>
-            <p>Example: <span>${jsonData[0].meanings[0].definitions[0].example || "Not Found"}</span></p>
-            <p>Synonyms: <span>${synonyms || "Not Found"}</span></p>`; 
-        document.querySelector(".text").appendChild(div);
-
-        console.log(jsonData);
-        console.log(jsonData[0].word);
-        console.log(jsonData[0].meanings[0].definitions[0].definition);
-    } catch (error) {
-        console.error("Error fetching data:", error);
+        text.innerHTML = `
+            <h2>Word: <span>${data[0].word}</span></h2>
+            <p>Meaning: <span>${meanings[0].definitions[0].definition}</span></p>
+            <p>PartsOfSpeech: <span>${meanings[0].partOfSpeech}</span></p>
+            <p>Synonyms: <span>${firstThreeSynonyms}</span></p>
+        `;
+    } catch (err) {
+        console.error('Error fetching data:', err);
     }
 }
-
-button.addEventListener("click", function() {
-        let searchValue = inputBox.value;
-        if (searchValue == "") {
-                alert('Please enter a value');
-        } else {
-            getData(searchValue);
-        }
-});
-    
-
-
-
-
-
 
 
 

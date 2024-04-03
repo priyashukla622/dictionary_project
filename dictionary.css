@@ -5,60 +5,69 @@
     font-family: Arial, sans-serif;
 }
  body{
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM15I56fsnpPdF03lr9JbLE6SVuxvSf3epsQ&s'); 
-    background-size: contain;
-    /* background-repeat: no-repeat; */
-
+    background-size: cover;
+    background-image: url('https://media.gettyimages.com/id/175390897/photo/stack-of-colorful-books.jpg?s=612x612&w=gi&k=20&c=emwD_5W3LT2cazYIuH82NP1lsbZ5FmhpJHCaSKTO3Jg='); 
     
 }
 nav{
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: cadetblue;
+    background-color: cadetblue; 
     color: white;
-    font-size: 70px;
-    height: 200px;
+    font-size: 50px;
+    height: 130px; 
+
 }
+
 #container {
     width:1380px;
     height: 1100px;
     padding: 22px;
     position: relative;
-    top: 60px;
-    background-color:lightcoral;
-    box-shadow: 1px 3px 3px 3px rgb(215,215,215);
+    top: 7rem;
+    left: -400px;
+    /* background-color:lightcoral;  */
     border-radius: 6px;
     margin: auto; 
 }
+
 #container input{
-    height: 70%;
-    width:80%;
-    padding: 12px; 
-    padding-left: 30px;
+    height: 75px;
+    width:50%;
+    padding:12px; 
+    padding-left:2rem; 
     border:none;
     outline:none; 
-    font-size: 80px;
+    font-size: 60px;
     border-radius:10px ;
+    border: 5px solid black;
     background-color:lightgray;
 }
+
+
+
 #container i{
-    font-size: 60px;
+    font-size: 50px;
     padding-left:200px;
-    margin-left: -300px;
+    margin-left: -300px; 
 }
+
+
 .searchBar{
     display: flex;
     gap:4px;
 }
 
+
 button{
-    left:35px;
-    top:-8px;
+    left:5rem;
+    top:3px;
+    bottom:75px;
     position: relative;
-    height:108px;
-    width:19%;
-    border: 5 px solid black;
+    height:75px;
+    width:18%;
+    border: 5px solid black;
     border-radius: 10px;
     font-size: 60px;
     cursor: pointer;
@@ -66,25 +75,30 @@ button{
     background-color:orange;
 }
 
+
 .text{
     padding: 22px;
     margin-top: 22px;
 
-
 }
+
 h2{
-    font-size: 80px;
+    font-size: 60px;
 }
 .text p{
     margin-top: 45px;
-    font-size: 70px;
+    font-size: 50px;
+    font-weight: normal;
 }
 
 text span{
     color: grey;
 }
 
-@media(max-width:600px){
+
+
+
+@media(max-width:400px){
     nav{
         height:90px;
         font-size: 15px;
@@ -92,12 +106,11 @@ text span{
     #container{
         margin-top: -60px;
         height: 270px;
+        margin-left:1000px; 
     }
     #container input{
-        height:40px;
-        width:250px;
-        font-size:10px;
-        margin-top: -80px;
+        height:30px;
+        width:10rem;
     }
     button{
         height:40px;
@@ -106,6 +119,7 @@ text span{
         margin-left:37px;
      
     }
+
     #container i{
         font-size: 20px;
         margin-left: -300px;
@@ -120,16 +134,8 @@ text span{
     }
     body{
         height: 300px;
-    }
-
-    
-   
-    
-}
-
-
-
-
+    }  
+} 
 
 
 
