@@ -180,7 +180,7 @@
 
 
 
-// let apiUrl=('')
+// let apiUrl=('http://www.omdbapi.com/?t=ABCD&apikey=c37526bb')
 // fetch(apiUrl)
 //     .then(response=>response.json())
 //     .then(data=>{
@@ -191,6 +191,18 @@
 //       console.log("error", error)
 //    })
     
+
+
+
+// fetch('http://localhost:2000/getQuestion')
+//     .then(response=>response.json())
+//     .then(data=>{
+//       console.log(data)
+//    })
+//    .catch(error=>{
+//       console.log("error", error)
+//    })
+
 
 
 
@@ -241,6 +253,9 @@
 //         console.log(e)
 //     }
 // }
+
+
+
 
 
 
@@ -304,16 +319,16 @@
 
 
 
-let apiUrl=('http://localhost:5000/users/readPost')
-fetch(apiUrl)
-    .then(response=>response.json())
-    .then(data=>{
-      console.log(data)
+// let apiUrl=('http://localhost:5000/users/readPost')
+// fetch(apiUrl)
+//     .then(response=>response.json())
+//     .then(data=>{
+//       console.log(data)
 
-   })
-   .catch(error=>{
-      console.log("error", error)
-   })
+//    })
+//    .catch(error=>{
+//       console.log("error", error)
+//    })
 
 
 
@@ -518,28 +533,50 @@ fetch(apiUrl)
 
 
 // Example of a Promise
-let myPromise = new Promise((resolve, reject) => {
-        // Simulating an asynchronous operation (e.g., fetching data)
-        setTimeout(() => {
-            // Resolve the Promise with a value
-            resolve("Data fetched successfully");
+// let myPromise = new Promise((resolve, reject) => {
+//         // Simulating an asynchronous operation (e.g., fetching data)
+//         setTimeout(() => {
+//             // Resolve the Promise with a value
+//             resolve("Data fetched successfully");
             
-            // Reject the Promise with an error
-            reject("Error fetching data");
-        }, 2000);
-    });
+//             // Reject the Promise with an error
+//             reject("Error fetching data");
+//         }, 2000);
+//     });
     
-    // Handling the Promise
-    myPromise
-        .then((result) => {
-            console.log(result); // Output: Data fetched successfully
+//     // Handling the Promise
+//     myPromise
+//         .then((result) => {
+//             console.log(result); // Output: Data fetched successfully
+//         })
+//         .catch((error) => {
+//             console.error(error); // Output: Error fetching data
+//         });
+    
+
+
+let apiUrl = 'http://www.omdbapi.com/?t=ABCD&apikey=c37526bb';
+
+let fetchData = new Promise((resolve, reject) => {
+    fetch(apiUrl)
+        .then(response => {
+            return response.json();
         })
-        .catch((error) => {
-            console.error(error); // Output: Error fetching data
+        .then(data => {
+            resolve(data);
+        })
+        .catch(error => {
+            reject(error);
         });
-    
+});
 
-
+fetchData
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log("error", error);
+    });
 
 
 
